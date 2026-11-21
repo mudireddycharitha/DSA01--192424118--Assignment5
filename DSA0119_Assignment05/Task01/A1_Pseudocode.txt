@@ -1,0 +1,25 @@
+
+ALGORITHM Calculate_Daily_Billing
+
+BEGIN
+
+    DECLARE bills AS ARRAY OF Bill POINTERS
+    DECLARE n AS INTEGER
+    DECLARE i AS INTEGER
+    DECLARE dailyTotal AS REAL
+
+    SET dailyTotal ? 0
+
+    INPUT n
+
+    FOR i ? 0 TO n - 1 DO
+
+        dailyTotal ? dailyTotal + bills[i].total()
+
+        CALL bills[i].print()
+
+    END FOR
+
+    DISPLAY "Total Daily Revenue: ", dailyTotal
+
+END
